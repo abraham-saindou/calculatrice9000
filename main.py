@@ -19,6 +19,7 @@ def btn_click(x):
     numericEq.set(calcValue)
 
 def clearInput():
+    global calcValue
     calcValue = ""
     numericEq.set("")
 
@@ -28,26 +29,26 @@ def btn_equal():
     total = str(somme)
     numericEq.set(total)
 
-button1 = Button(root, text="1", width=5, height=3, command=btn_click(1))
-button2 = Button(root, text="2", width=5, height=3, command=btn_click(2))
-button3 = Button(root, text="3", width=5, height=3, command=btn_click(3))
-button4 = Button(root, text="4", width=5, height=3, command=btn_click(4))
-button5 = Button(root, text="5", width=5, height=3, command=btn_click(5))
-button6 = Button(root, text="6", width=5, height=3, command=btn_click(6))
-button7 = Button(root, text="7", width=5, height=3, command=btn_click(7))
-button8 = Button(root, text="8", width=5, height=3, command=btn_click(8))
-button9 = Button(root, text="9", width=5, height=3, command=btn_click(9))
-button0 = Button(root, text="0", width=10, height=3, command=btn_click(0))
-button_dot = Button(root, text=".", width=5, height=3, command=btn_click("."))
+button1 = Button(root, text="1", width=5, height=3, command=lambda: btn_click(1))
+button2 = Button(root, text="2", width=5, height=3, command=lambda: btn_click(2))
+button3 = Button(root, text="3", width=5, height=3, command=lambda: btn_click(3))
+button4 = Button(root, text="4", width=5, height=3, command=lambda: btn_click(4))
+button5 = Button(root, text="5", width=5, height=3, command=lambda: btn_click(5))
+button6 = Button(root, text="6", width=5, height=3, command=lambda: btn_click(6))
+button7 = Button(root, text="7", width=5, height=3, command=lambda: btn_click(7))
+button8 = Button(root, text="8", width=5, height=3, command=lambda: btn_click(8))
+button9 = Button(root, text="9", width=5, height=3, command=lambda: btn_click(9))
+button0 = Button(root, text="0", width=10, height=3, command=lambda: btn_click(0))
+button_dot = Button(root, text=".", width=5, height=3, command=lambda: btn_click("."))
 
-button_plus = Button(root, text="+", width=5, height=7, command=btn_click("+"))
-button_less = Button(root, text="-", width=5, height=3, command=btn_click("-"))
-button_mult = Button(root, text="*", width=5, height=3, command=btn_click("*"))
-button_div = Button(root, text="/", width=5, height=3, command=btn_click("/"))
+button_plus = Button(root, text="+", width=5, height=7, command=lambda: btn_click("+"))
+button_less = Button(root, text="-", width=5, height=3, command=lambda: btn_click("-"))
+button_mult = Button(root, text="*", width=5, height=3, command=lambda: btn_click("*"))
+button_div = Button(root, text="/", width=5, height=3, command=lambda: btn_click("/"))
 
-button_mod = Button(root, text="%", width=5, height=3, command=btn_click("%"))
-button_sum = Button(root, text="=", width=5, height=6, command=lambda: (btn_equal()))
-button_clear = Button(root, text="C", width=5, height=3, command=clearInput())
+button_mod = Button(root, text="%", width=5, height=3, command=lambda: btn_click("%"))
+button_sum = Button(root, text="=", width=5, height=6, command=lambda: btn_equal())
+button_clear = Button(root, text="C", width=5, height=3, command=lambda: clearInput())
 
 button1.grid(row=4, column=0)
 button2.grid(row=4, column=1)
